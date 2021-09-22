@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="text-center">
     <Header />
+    
     <DiscList/>
   </div>
 </template>
