@@ -71,6 +71,8 @@ export default {
                 height: 100%;
                 //background-color: white;
                 position: relative;
+                display: flex;
+                justify-content: center;
             }
         }
     }

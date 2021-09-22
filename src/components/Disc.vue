@@ -25,7 +25,7 @@ export default {
         position: relative;
         
         .cardDisc {
-            background-color: #868686;
+            background-color: #49515f;
             width: 100%;
             height: 100%;
             position: absolute;

@@ -25,7 +25,7 @@ export default {
         #container-header {
             width: 100%;
             height: 100%;
-            background-color: #868686;
+            background-color: #49515f;
 
             .logoSpotify {
                 width: 100%;
