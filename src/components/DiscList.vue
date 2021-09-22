@@ -3,11 +3,11 @@
         <section id="container-main">
             <div v-if="!loading" class="box-dischi row">
                 <!-- Stampo la lista dei dischi ottenuta tramite Axios -->
-                <div v-for="(disc, index) in discList" :key="index" class="col-6 col-md-5 col-lg-3 mb-5">
+                <div v-for="(disc, index) in discList" :key="index" class="col-4 col-md-4 col-lg-2 mb-2">
                     <Disc :cover="disc" />
                 </div>
             </div>
-            <!-- <Loader v-else /> -->
+            <Loader v-else />
         </section>
     </main>
 </template>
@@ -15,19 +15,19 @@
 <script>
 import axios from 'axios';
 import Disc from './Disc.vue';
-//import Loader from './Loader.vue';
+import Loader from './Loader.vue';
 
 export default {
   name: 'DiscList',
   components: {
       Disc,
-      //Loader
+      Loader
   },
   data() {
     return {
       APIUrl: 'https://flynn.boolean.careers/exercises/api/array/music',
       discList: [],
-      //loading: true
+      loading: true
     }
   },
   created() {
@@ -41,11 +41,11 @@ export default {
             console.log(res.data.response);
             this.discList = res.data.response;
             //setTimeout( () => {this.loading = false; }, 5000);
-            //this.loading = false;
+            this.loading = false;
           })
-          //.catch( err => {
-            //console.log("Error ", err);
-          //})
+          .catch( err => {
+            console.log("Error ", err);
+          })
     }
   }
 }
@@ -61,10 +61,16 @@ export default {
         #container-main {
             width: 100%;
             height: 100%;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            position: relative;
 
             .box-dischi {
-                width: 100%;
+                width: 70%;
                 height: 100%;
+                //background-color: white;
+                position: relative;
             }
         }
     }
