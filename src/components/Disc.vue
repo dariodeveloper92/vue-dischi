@@ -6,7 +6,6 @@
             <h4> {{ cover.author }} </h4>
             <h5> {{ cover.year }} </h5>
         </div>
-        
     </div>
 </template>
 

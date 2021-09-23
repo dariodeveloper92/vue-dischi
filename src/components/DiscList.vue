@@ -7,7 +7,7 @@
               </div>
                 <!-- Stampo la lista dei dischi ottenuta tramite Axios -->
                 <!-- SOSTITUIRE discList in filteredList -->
-                <div v-for="(disc, index) in discList" :key="index" class="col-4 col-md-4 col-lg-2 mb-2">
+                <div v-for="(disc, index) in filteredGenreList" :key="index" class="col-4 col-md-4 col-lg-2 mb-2">
                     <Disc :cover="disc" /> <!-- cicla gli elementi contenuti nella componente Disc che mi sono creato -->
                 </div>
             </div>
@@ -42,15 +42,18 @@ export default {
   },
   computed: {
     filteredGenreList() {
-      if(this.searchText == ''){
-        return this.discList;
+      if(this.discList.length > 0){
+        if(this.searchText == ''){
+          return this.discList;
+        }
+        let filteredList = this.discList.filter(item => {
+          return item.genre
+                          .toLowerCase()
+                          .includes(this.searchText.toLowerCase());
+        })
+        return filteredList;
       }
-      let filteredList = this.discList.filter(item => {
-        return item.name
-                        .toLowerCase()
-                        .includes(this.searchText.toLowerCase());
-      })
-      return filteredList;
+      return this.discList;
     }
   },
   methods: {

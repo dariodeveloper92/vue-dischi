@@ -1,9 +1,12 @@
 <template>
-    <form  class="d-flex mb-5">
+    <form  class="">
         <div class="search">
             <label for="type"> </label>
-            <select name="type" id="type" v-model="selectText" @click.prevent="$emit('performSearch', selectText)">
+            <select name="type" id="type" v-model="selectText" @change="$emit('performSearch', selectText)">
                 <option value=""> Scegli il tuo genere</option>
+                <option> pop </option>
+                <option> jazz </option>
+                <option> metal </option>
             </select>
         </div>
     </form>
@@ -12,6 +15,7 @@
 <script>
 export default {
     name: 'Search',
+    emits:['performSearch'],
     data() {
         return {
             selectText: '',

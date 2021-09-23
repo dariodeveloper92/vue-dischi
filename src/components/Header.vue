@@ -7,20 +7,16 @@
                </a>
             </div> 
             <div  class="col-12" id="select">
-                <Search @performSearch="searchGenre" />
+                
             </div>
         </div>
     </header>
 </template>
 
 <script>
-import Search from './Search.vue';
-
 export default {
   name: 'Header',
-  components: {
-      Search,
-  }
+  
 }
 </script>
 
