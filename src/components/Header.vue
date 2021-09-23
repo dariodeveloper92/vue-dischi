@@ -6,13 +6,21 @@
                    <img alt="Spotify logo" src="../assets/spotify-logo.svg">
                </a>
             </div> 
+            <div  class="col-12" id="select">
+                <Search @performSearch="searchGenre" />
+            </div>
         </div>
     </header>
 </template>
 
 <script>
+import Search from './Search.vue';
+
 export default {
   name: 'Header',
+  components: {
+      Search,
+  }
 }
 </script>
 
@@ -40,6 +48,12 @@ export default {
                 img {
                     width: 8%;
                 }
+            }
+            #select {
+                display: flex;
+                justify-content: flex-end;
+                top: 10px;
+                position: absolute;
             }
         }
     }
