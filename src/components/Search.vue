@@ -30,6 +30,6 @@ export default {
 <style>
     select {
         width: 200px;
-        height: 50px; 
+        height: 50px;
     }
 </style>

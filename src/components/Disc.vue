@@ -22,16 +22,17 @@ export default {
         width: 100%;
         height: 100%;
         position: relative;
+        display: flex;
         
         .cardDisc {
             background-color: #49515f;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            padding: 15px;
+            width: 200px;
+            height: 250px;
+            position: relative;
+            padding: 15px 10px;
             
             img { 
-                width: 100%;
+                width: 100px;
                 object-fit: contain;
                 vertical-align: middle;
             }

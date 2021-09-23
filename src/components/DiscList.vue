@@ -100,6 +100,7 @@ export default {
                 position: relative;
                 display: flex;
                 justify-content: center;
+                bottom: 80px;
             }
         }
     }
